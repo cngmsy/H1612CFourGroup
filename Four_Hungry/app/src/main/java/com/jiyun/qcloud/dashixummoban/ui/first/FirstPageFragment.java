@@ -21,8 +21,6 @@ public class FirstPageFragment extends BaseFragment implements XRecyclerView.Loa
     private HomeContract.Presenter presenter;
     private List<Object> datas;
 
-
-
     @Override
     protected int getLayoutRes() {
         return R.layout.fragment_home;

@@ -11,8 +11,9 @@ import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
  */
 
 public class HomePresenter implements HomeContract.Presenter {
-
+    //在p层持有View层的对象，但是这里的对象不是实例化的对象，而是使用了接口来实现调用
     private HomeContract.View homeView;
+    //在P层持有了Model层的对象
     private IPandaHomeModel homeModel;
     /*
        在构造方法里面做了什么事情;   初始化了HomeView  这时候的homeView相当于HomePageFragent
@@ -27,6 +28,7 @@ public class HomePresenter implements HomeContract.Presenter {
     @Override
     public void start() {
         homeView.showProgress();
+        //在该方法的回调参数中完成数据bean对象的返回
         homeModel.loadHomeList(new NetWorkCallBack<PandaHome>() {
             @Override
             public void onSuccess(PandaHome pandaHome) {

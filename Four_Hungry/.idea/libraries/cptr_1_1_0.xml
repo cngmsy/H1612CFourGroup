@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="cptr-1.1.0">
     <CLASSES>
-      <root url="file://$USER_HOME$/.android/build-cache/1c0de5e01367afd3c69b82dc600d0965d93800ba/output/res" />
-      <root url="jar://$USER_HOME$/.android/build-cache/1c0de5e01367afd3c69b82dc600d0965d93800ba/output/jars/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.chanven.lib/cptr/1.1.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.chanven.lib/cptr/1.1.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
