@@ -1,0 +1,84 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml:2:1-16:12
+	package
+		ADDED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml:3:5-45
+		INJECTED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml
+		INJECTED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml
+		INJECTED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml
+		INJECTED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml
+application
+ADDED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml:5:5-14:19
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\988cbf9d4e7c5195be3b0ac19955cab6c14f1276\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\a605d051812c5b463ef34280370357a969cb8c1d\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\5ff3cd01481ef39998ab9c4a8778ee7c0c62d68b\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\0268a542694be3bb11a7a3da7e48bdc74d1d86e4\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\a6addc69b8fef9fe1972b285f97efeb335c72f49\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\43db3c9430e7c2eee35c5e1b558465b5292cef63\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\e8c91570307dcedb9a9bfe05e4fd0c8afcdbd171\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\9e90a7ed98d003a4657a8fe61ba94aa2aa0176ba\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\0f9f4c1bcdca1b954c316404b606455d7f0baa43\output\AndroidManifest.xml:29:5-20
+	android:label
+		ADDED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml:6:9-41
+	android:supportsRtl
+		ADDED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml:6:42-68
+	android:allowBackup
+		ADDED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml:5:18-44
+	android:icon
+		ADDED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml:5:45-79
+	android:theme
+		ADDED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml:6:69-100
+activity#com.jiyun.qcloud.myapplication.MainActivity
+ADDED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml:7:9-13:20
+	android:name
+		ADDED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml:7:19-47
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml:8:13-12:29
+action#android.intent.action.MAIN
+ADDED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml:9:17-69
+	android:name
+		ADDED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml:9:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml:11:17-77
+	android:name
+		ADDED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml:11:27-74
+uses-sdk
+INJECTED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\988cbf9d4e7c5195be3b0ac19955cab6c14f1276\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\a605d051812c5b463ef34280370357a969cb8c1d\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\5ff3cd01481ef39998ab9c4a8778ee7c0c62d68b\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\0268a542694be3bb11a7a3da7e48bdc74d1d86e4\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\a6addc69b8fef9fe1972b285f97efeb335c72f49\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\43db3c9430e7c2eee35c5e1b558465b5292cef63\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\e8c91570307dcedb9a9bfe05e4fd0c8afcdbd171\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\9e90a7ed98d003a4657a8fe61ba94aa2aa0176ba\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\0f9f4c1bcdca1b954c316404b606455d7f0baa43\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.jakewharton:butterknife:8.4.0] C:\Users\my301s\.android\build-cache\57ff370d01f205c4d33ea7b1de0ad8fc29745d5d\output\AndroidManifest.xml:5:5-43
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\988cbf9d4e7c5195be3b0ac19955cab6c14f1276\output\AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml
+		INJECTED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml
+		INJECTED from D:\BigShiXun\DaShiXumMoBan\myapplication\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\988cbf9d4e7c5195be3b0ac19955cab6c14f1276\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\a605d051812c5b463ef34280370357a969cb8c1d\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\5ff3cd01481ef39998ab9c4a8778ee7c0c62d68b\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\0268a542694be3bb11a7a3da7e48bdc74d1d86e4\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\a6addc69b8fef9fe1972b285f97efeb335c72f49\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\43db3c9430e7c2eee35c5e1b558465b5292cef63\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\e8c91570307dcedb9a9bfe05e4fd0c8afcdbd171\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\9e90a7ed98d003a4657a8fe61ba94aa2aa0176ba\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\0f9f4c1bcdca1b954c316404b606455d7f0baa43\output\AndroidManifest.xml:25:5-27:41
+	android:value
+		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\988cbf9d4e7c5195be3b0ac19955cab6c14f1276\output\AndroidManifest.xml:27:9-38
+	android:name
+		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\my301s\.android\build-cache\988cbf9d4e7c5195be3b0ac19955cab6c14f1276\output\AndroidManifest.xml:26:9-47
