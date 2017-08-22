@@ -21,6 +21,7 @@ import com.jiyun.qcloud.dashixummoban.ui.first.FirstPageFragment;
 import com.jiyun.qcloud.dashixummoban.ui.first.HomePresenter;
 import com.jiyun.qcloud.dashixummoban.ui.more.MorePageFragment;
 import com.jiyun.qcloud.dashixummoban.ui.mycenter.MyPageFragment;
+import com.jiyun.qcloud.dashixummoban.ui.mycenter.MyPresenter;
 import com.jiyun.qcloud.dashixummoban.ui.order.OrderPageFragment;
 import com.orhanobut.logger.Logger;
 
@@ -146,7 +147,10 @@ public class MainActivity extends BaseActivity {
                 FragmentMager.getInstance().start(R.id.container, OrderPageFragment.class,false).build();
                 break;
             case R.id.main_FaXian:
-                FragmentMager.getInstance().start(R.id.container, MyPageFragment.class,false).build();
+                //FragmentMager.getInstance().start(R.id.container, MyPageFragment.class,false).build();
+                MyPageFragment myPageFragment = (MyPageFragment) FragmentMager.getInstance().start(R.id.container, MyPageFragment.class, false).build();
+                //presenter在这里初始化
+                new MyPresenter(myPageFragment);
                 break;
             case R.id.main_WoDe:
                 FragmentMager.getInstance().start(R.id.container, MorePageFragment.class,false).build();
