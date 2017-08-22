@@ -19,4 +19,9 @@ public class ShopCarModelImpl implements IShopCarModel{
         params.put("sellerId",sellerId);
         iHttp.get(Urls.SHOP,params, callBack);
     }
+
+    @Override
+    public void orderPost(NetWorkCallBack<BaseBean> callBack) {
+        iHttp.post(Urls.ORDERFORM_LIST,null, callBack);
+    }
 }

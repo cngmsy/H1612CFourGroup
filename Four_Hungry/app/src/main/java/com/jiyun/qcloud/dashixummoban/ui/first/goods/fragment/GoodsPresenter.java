@@ -10,9 +10,14 @@ import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
  */
 
 public class GoodsPresenter implements GoodsContract.Presenter{
+    //在p层持有View层的对象，但是这里的对象不是实例化的对象，而是使用了接口来实现调用
     private GoodsContract.View goodsView;
+    //在P层持有了Model层的对象
     private IShopCarModel shopCarModel;
-
+    /*
+   在构造方法里面做了什么事情;   初始化了HomeView  这时候的homeView相当于HomePageFragent
+   同时在这个构造方法中有初始化了homeModel   HomeModel里面就是网络请求后从服务器返回的bean结果
+ */
     public GoodsPresenter(GoodsContract.View goodsView) {
         this.goodsView = goodsView;
         goodsView.setPresenter(this);
@@ -43,5 +48,6 @@ public class GoodsPresenter implements GoodsContract.Presenter{
 
             }
         });
+
     }
 }

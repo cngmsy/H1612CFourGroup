@@ -9,7 +9,7 @@ import com.jiyun.qcloud.dashixummoban.entity.car.BaseBean;
  */
 
 public class GoodsContract {
-     interface View extends IBaseView<Presenter>{
+      interface View extends IBaseView<Presenter>{
         void showShop(BaseBean baseBean);
         void listener();
     }

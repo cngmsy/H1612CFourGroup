@@ -8,9 +8,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jiyun.qcloud.dashixummoban.R;
 import com.jiyun.qcloud.dashixummoban.base.BaseActivity;
+import com.jiyun.qcloud.dashixummoban.entity.car.BaseBean;
 import com.jiyun.qcloud.dashixummoban.entity.car.RightListBean;
 
 import java.util.List;
@@ -23,7 +25,7 @@ import butterknife.OnClick;
  * Created by liuwangping on 2017/8/15.
  */
 
-public class SettleCenterActivity extends BaseActivity {
+public class SettleCenterActivity extends BaseActivity implements OrderContract.View{
     @BindView(R.id.sette_back)
     ImageButton setteBack;
     @BindView(R.id.settle_left)
@@ -65,8 +67,14 @@ public class SettleCenterActivity extends BaseActivity {
     @BindView(R.id.tv_submit)
     TextView tvSubmit;
     private List<RightListBean> list;
+    private String string;
+    private OrderContract.Presenter presenter;
     @Override
     protected void initData() {
+        if (presenter != null) {
+            presenter.start();
+        }
+
         Intent intent = getIntent();
         list = (List<RightListBean>) intent.getSerializableExtra("list");
         String num = intent.getStringExtra("num");
@@ -88,11 +96,40 @@ public class SettleCenterActivity extends BaseActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.sette_back:
+                finish();
                 break;
             case R.id.rl_location:
                 break;
             case R.id.tv_submit:
+                Toast.makeText(SettleCenterActivity.this,string,Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+
+    @Override
+    public void showOrder(BaseBean baseBean) {
+        string = baseBean.getData();
+
+    }
+
+    @Override
+    public void showProgress() {
+
+    }
+
+    @Override
+    public void dimissProgress() {
+
+    }
+
+    @Override
+    public void showMessage(String msg) {
+
+    }
+
+    @Override
+    public void setPresenter(OrderContract.Presenter presenter) {
+        this.presenter = presenter;
+
     }
 }

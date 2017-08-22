@@ -9,5 +9,5 @@ import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
 
 public interface IShopCarModel extends BaseModel {
     void shop(String sellerId,NetWorkCallBack<BaseBean> callBack);
-
+    void orderPost(NetWorkCallBack<BaseBean> callBack);
 }
