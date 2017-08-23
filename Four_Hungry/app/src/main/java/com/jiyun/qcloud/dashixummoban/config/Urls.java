@@ -6,7 +6,10 @@ package com.jiyun.qcloud.dashixummoban.config;
  */
 
 public class Urls {
-
+    //时光网视频地址
+    public static final String MOVIES = "https://ticket-api-m.mtime.cn/discovery/trailerList.api";
+    //订单页面GET
+    public static final String ORDER = "http://123.206.14.104:8080/TakeoutService//order?userId=3626";
     //服务器地址
     public static final String BASE_URL = "http://123.206.14.104:8080/TakeoutService/";
     //首页GET

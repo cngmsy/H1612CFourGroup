@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="multidex-1.0.1">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/multidex/1.0.1/res" />
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/multidex/1.0.1/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/e4932e28383f133eb1aaa14523971630f181adfa/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/e4932e28383f133eb1aaa14523971630f181adfa/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
