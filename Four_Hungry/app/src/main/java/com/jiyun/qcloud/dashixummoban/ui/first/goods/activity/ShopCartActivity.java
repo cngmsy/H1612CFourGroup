@@ -73,7 +73,6 @@ public class ShopCartActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.jiesuan_button:
-//                new OrderPresenter(new SettleCenterActivity());
                 Intent intent=new Intent(ShopCartActivity.this,SettleCenterActivity.class);
                 intent.putExtra("list", (Serializable) mlist);
                 intent.putExtra("num",format);

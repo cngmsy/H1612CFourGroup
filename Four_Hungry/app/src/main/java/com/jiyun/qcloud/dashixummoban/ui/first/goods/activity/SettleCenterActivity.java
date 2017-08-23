@@ -24,6 +24,7 @@ import butterknife.OnClick;
  * Created by liuwangping on 2017/8/15.
  */
 
+
 public class SettleCenterActivity extends BaseActivity{
     @BindView(R.id.sette_back)
     ImageButton setteBack;
@@ -66,11 +67,10 @@ public class SettleCenterActivity extends BaseActivity{
     @BindView(R.id.tv_submit)
     TextView tvSubmit;
     private List<RightListBean> list;
-
+    private String string;
 
     @Override
     protected void initData() {
-
 
         Intent intent = getIntent();
         list = (List<RightListBean>) intent.getSerializableExtra("list");
@@ -98,9 +98,10 @@ public class SettleCenterActivity extends BaseActivity{
             case R.id.rl_location:
                 break;
             case R.id.tv_submit:
-                Toast.makeText(SettleCenterActivity.this,"提交城东",Toast.LENGTH_SHORT).show();
+                Toast.makeText(SettleCenterActivity.this,"提交成功",Toast.LENGTH_SHORT).show();
                 break;
         }
     }
+
 
 }

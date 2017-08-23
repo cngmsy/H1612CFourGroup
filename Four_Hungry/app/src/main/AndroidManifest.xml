@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jiyun.qcloud.dashixummoban">
-
     <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <!--需要配置的内容权限，这个activity   com.mob.tools.MobUIShell
+  AppKey和AppSecret
+  -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -23,12 +30,22 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.first.goods.activity.GoodsActivity">
+        <activity android:name=".main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
-        <activity android:name=".ui.mycenter.MobActivity"></activity>
+        <activity android:name=".ui.first.goods.activity.GoodsActivity"/>
+        <activity android:name=".ui.first.goods.activity.ShopCartActivity"/>
+        <activity android:name=".ui.first.goods.activity.SettleCenterActivity"/>
+        <activity android:name=".ui.mycenter.MobActivity"/>
+        <activity android:name=".ui.first.map.GaodeActivity"/>
+        <activity android:name=".ui.first.search.SearchActivity"/>
 
+        <!--MOb-->
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
@@ -38,6 +55,7 @@
         <meta-data android:name="Mob-AppKey" android:value="1fb1c8986d392"/>
         <meta-data android:name="Mob-AppSecret" android:value="dbd3b3cd10c7924d31c88bd9b5079c23"/>
 
+        <!--新浪-->
         <activity
             android:name=".WBShareActivity"
             android:configChanges="keyboardHidden|orientation"
@@ -54,20 +72,11 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
-        <activity android:name=".main.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".ui.first.goods.activity.GoodsActivity"/>
-        <activity android:name=".ui.first.map.GaodeActivity"/>
-        <activity android:name=".ui.first.search.SearchActivity"/>
-        <activity android:name=".ui.first.goods.activity.ShopCartActivity"/>
-        <activity android:name=".ui.first.goods.activity.SettleCenterActivity"/>
         <meta-data android:name="com.amap.api.v2.apikey" android:value="8935b35ebfd568aaced58d69e4b0cc2f">
         </meta-data>
+
+
+<!--QQ-->
 
         <activity
             android:name="com.umeng.qq.tencent.AuthActivity"
@@ -76,10 +85,8 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
                 <data android:scheme="tencent100424468" />
             </intent-filter>
         </activity>
@@ -106,8 +113,6 @@
 
         <activity android:name=".ui.mycenter.PswLoginActivity"/>
 
-     <activity android:name=".ui.first.goods.activity.ShopCartActivity"/>
-        <activity android:name=".ui.first.goods.activity.SettleCenterActivity"/>
 
     </application>
 
