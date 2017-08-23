@@ -1,8 +1,8 @@
 package com.jiyun.qcloud.dashixummoban.main;
 
+import android.app.FragmentManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -20,10 +20,10 @@ import com.jiyun.qcloud.dashixummoban.ui.first.HomePresenter;
 import com.jiyun.qcloud.dashixummoban.ui.more.MorePageFragment;
 import com.jiyun.qcloud.dashixummoban.ui.mycenter.MyPageFragment;
 import com.jiyun.qcloud.dashixummoban.ui.order.OrderPageFragment;
-import com.orhanobut.logger.Logger;
+
+import java.util.logging.Logger;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -72,6 +72,7 @@ public class MainActivity extends BaseActivity {
         }
         return R.layout.activity_main;
     }
+
     private long firstTime = 0;
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
@@ -89,12 +90,7 @@ public class MainActivity extends BaseActivity {
         }
         return super.onKeyUp(keyCode, event);
     }
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
+
 
     @OnClick({R.id.main_ZongHe, R.id.main_DongTan, R.id.main_FaXian, R.id.main_WoDe, R.id.Main_RadioGroup})
     public void onViewClicked(View view) {
@@ -115,6 +111,7 @@ public class MainActivity extends BaseActivity {
                 break;
         }
     }
+
 }
 
 

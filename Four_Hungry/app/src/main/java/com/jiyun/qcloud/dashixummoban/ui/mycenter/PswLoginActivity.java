@@ -1,6 +1,5 @@
 package com.jiyun.qcloud.dashixummoban.ui.mycenter;
 
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,7 +13,6 @@ import com.jiyun.qcloud.dashixummoban.entity.DataSynEvent;
 import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class PswLoginActivity extends BaseActivity {
@@ -45,12 +43,6 @@ public class PswLoginActivity extends BaseActivity {
         return R.layout.activity_psw_login;
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 
     @OnClick({R.id.iv_login_back, R.id.btlogin})
     public void onViewClicked(View view) {
