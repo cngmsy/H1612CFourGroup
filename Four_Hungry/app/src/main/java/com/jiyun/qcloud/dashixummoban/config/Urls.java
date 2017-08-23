@@ -24,6 +24,7 @@ public class Urls {
     public static final String PAY = BASE_URL + "pay";
     //上传头像
     public static final String USERIMG ="http://123.206.14.104:8080/FileUploadDemo/FileUploadServlet";
+
     //预告片
     public static final String PREVUE="https://ticket-api-m.mtime.cn/discovery/trailerList.api";
 

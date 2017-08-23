@@ -6,6 +6,8 @@ import com.jiyun.qcloud.dashixummoban.modle.dataModel.IPandaHomeModel;
 import com.jiyun.qcloud.dashixummoban.modle.dataModel.PandaHomeModelImpl;
 import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
 
+import java.io.File;
+
 /**
  * Created by xingge on 2017/7/26.
  */
@@ -47,5 +49,10 @@ public class HomePresenter implements HomeContract.Presenter {
 
             }
         });
+    }
+
+    @Override
+    public void upImage(File file) {
+
     }
 }

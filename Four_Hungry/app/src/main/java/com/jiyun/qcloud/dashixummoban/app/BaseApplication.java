@@ -7,6 +7,7 @@ import android.os.StrictMode;
 import android.support.multidex.MultiDexApplication;
 
 import com.jiyun.qcloud.dashixummoban.manager.ActivityCollector;
+import com.mob.MobSDK;
 import com.orhanobut.logger.AndroidLogTool;
 import com.orhanobut.logger.Logger;
 
@@ -23,9 +24,20 @@ public class BaseApplication extends MultiDexApplication {
     public static class Config{
         public static final boolean DEVELOPER_MORE=false;
     }
+    public BaseApplication() {
+    }
+
+    protected String a() {
+        return null;
+    }
+
+    protected String b() {
+        return null;
+    }
     @Override
     public void onCreate() {
         super.onCreate();
+        MobSDK.init(this, this.a(), this.b());
         if (Config.DEVELOPER_MORE&& Build.VERSION.SDK_INT<=Build.VERSION_CODES.GINGERBREAD) {
             //设置线程的严苛模式
             StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyDialog().build());
