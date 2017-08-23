@@ -146,7 +146,9 @@ public class MainActivity extends BaseActivity {
                 FragmentMager.getInstance().start(R.id.container, OrderPageFragment.class,false).build();
                 break;
             case R.id.main_FaXian:
-                FragmentMager.getInstance().start(R.id.container, MyPageFragment.class,false).build();
+               FragmentMager.getInstance().start(R.id.container, MyPageFragment.class,false).build();
+//                MyPageFragment myPageFragment = (MyPageFragment) FragmentMager.getInstance().start(R.id.container, MyPageFragment.class, false).build();
+                //presenter在这里初始化
                 break;
             case R.id.main_WoDe:
                 FragmentMager.getInstance().start(R.id.container, MorePageFragment.class,false).build();

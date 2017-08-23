@@ -5,6 +5,8 @@ import com.jiyun.qcloud.dashixummoban.entity.Home;
 import com.jiyun.qcloud.dashixummoban.modle.dataModel.HomeImpl;
 import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
 
+import java.io.File;
+
 /**
  * Created by xingge on 2017/7/26.
  */
@@ -46,6 +48,11 @@ public class HomePresenter implements HomeContract.Presenter {
             }
         });
 
+
+    }
+
+    @Override
+    public void upImage(File file) {
 
     }
 }

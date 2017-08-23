@@ -5,6 +5,8 @@ import com.jiyun.qcloud.dashixummoban.modle.dataModel.IShopCarModel;
 import com.jiyun.qcloud.dashixummoban.modle.dataModel.ShopCarModelImpl;
 import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
 
+import java.io.File;
+
 /**
  * Created by liuwangping on 2017/8/21.
  */
@@ -48,6 +50,11 @@ public class GoodsPresenter implements GoodsContract.Presenter{
 
             }
         });
+
+    }
+
+    @Override
+    public void upImage(File file) {
 
     }
 }
