@@ -21,7 +21,6 @@ import com.jiyun.qcloud.dashixummoban.ui.more.MoviePresenter;
 import com.jiyun.qcloud.dashixummoban.ui.mycenter.MyPageFragment;
 import com.jiyun.qcloud.dashixummoban.ui.order.OrdePresenter;
 import com.jiyun.qcloud.dashixummoban.ui.order.OrderPageFragment;
-import com.orhanobut.logger.Logger;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -63,7 +62,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        Logger.d("===========");
+       // Logger.d("===========");
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             //透明状态栏
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -72,6 +71,25 @@ public class MainActivity extends BaseActivity {
         }
         return R.layout.activity_main;
     }
+
+    private long firstTime = 0;
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_BACK:
+                long secondTime = System.currentTimeMillis();
+                if (secondTime - firstTime > 2000) {
+                    Toast.makeText(MainActivity.this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+                    firstTime = secondTime;
+                    return true;
+                } else {
+                    System.exit(0);
+                }
+                break;
+        }
+        return super.onKeyUp(keyCode, event);
+    }
+
 
     @OnClick({R.id.main_ZongHe, R.id.main_DongTan, R.id.main_FaXian, R.id.main_WoDe, R.id.Main_RadioGroup})
     public void onViewClicked(View view) {
@@ -93,26 +111,6 @@ public class MainActivity extends BaseActivity {
             case R.id.Main_RadioGroup:
                 break;
         }
-    }
-
-
-
-    private long firstTime = 0;
-    @Override
-    public boolean onKeyUp(int keyCode, KeyEvent event) {
-        switch (keyCode) {
-            case KeyEvent.KEYCODE_BACK:
-                long secondTime = System.currentTimeMillis();
-                if (secondTime - firstTime > 2000) {
-                    Toast.makeText(MainActivity.this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
-                    firstTime = secondTime;
-                    return true;
-                } else {
-                    System.exit(0);
-                }
-                break;
-        }
-        return super.onKeyUp(keyCode, event);
     }
 
 }
