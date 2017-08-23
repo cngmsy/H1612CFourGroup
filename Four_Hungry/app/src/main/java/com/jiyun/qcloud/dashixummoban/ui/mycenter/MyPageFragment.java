@@ -212,7 +212,6 @@ public class MyPageFragment extends BaseFragment implements MyContract.View{
             });
         }
     }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -241,7 +240,7 @@ public class MyPageFragment extends BaseFragment implements MyContract.View{
 
         popupWindow.setContentView(view);
         popupWindow.setHeight(400);
-        popupWindow.setWidth(600);
+        popupWindow.setWidth(500);
         popupWindow.setFocusable(true);
         popupWindow.setOutsideTouchable(true);
         popupWindow.setBackgroundDrawable(null);
@@ -349,6 +348,7 @@ public class MyPageFragment extends BaseFragment implements MyContract.View{
                                 imageHead.setImageDrawable(ciDrawable);
                             }
                         });
+                        popupWindow.dismiss();
                     }
 
                 });

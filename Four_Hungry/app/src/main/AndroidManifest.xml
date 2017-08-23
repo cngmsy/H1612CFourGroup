@@ -112,8 +112,6 @@
             android:value="940cd788d1573459936c1b39c67d2573"></meta-data>
 
         <activity android:name=".ui.mycenter.PswLoginActivity"/>
-
-
     </application>
 
 </manifest>

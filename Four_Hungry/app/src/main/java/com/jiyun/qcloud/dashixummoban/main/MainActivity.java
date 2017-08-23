@@ -1,7 +1,7 @@
 package com.jiyun.qcloud.dashixummoban.main;
 
+
 import android.os.Build;
-import android.support.v4.app.FragmentManager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -19,7 +19,6 @@ import com.jiyun.qcloud.dashixummoban.ui.first.HomePresenter;
 import com.jiyun.qcloud.dashixummoban.ui.more.MorePageFragment;
 import com.jiyun.qcloud.dashixummoban.ui.mycenter.MyPageFragment;
 import com.jiyun.qcloud.dashixummoban.ui.order.OrderPageFragment;
-import com.orhanobut.logger.Logger;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -29,7 +28,6 @@ import butterknife.OnClick;
  */
 
 public class MainActivity extends BaseActivity {
-
 
     @BindView(R.id.container)
     FrameLayout container;
@@ -43,7 +41,7 @@ public class MainActivity extends BaseActivity {
     RadioButton mainWoDe;
     @BindView(R.id.Main_RadioGroup)
     RadioGroup MainRadioGroup;
-    private FragmentManager fragmentManager;
+    private android.support.v4.app.FragmentManager fragmentManager;
     private long mExitTime;
 
     @Override
@@ -61,7 +59,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        Logger.d("===========");
+
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             //透明状态栏
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -81,7 +79,7 @@ public class MainActivity extends BaseActivity {
                 FragmentMager.getInstance().start(R.id.container, OrderPageFragment.class,false).build();
                 break;
             case R.id.main_FaXian:
-               FragmentMager.getInstance().start(R.id.container, MyPageFragment.class,false).build();
+                FragmentMager.getInstance().start(R.id.container, MyPageFragment.class,false).build();
                 break;
             case R.id.main_WoDe:
                 FragmentMager.getInstance().start(R.id.container, MorePageFragment.class,false).build();
