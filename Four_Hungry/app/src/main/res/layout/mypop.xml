@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="@dimen/x400"
+    android:layout_height="wrap_content"
     android:background="#ffffff"
     android:orientation="vertical">
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/x400"
         android:layout_height="wrap_content"
         android:padding="15dp"
         android:text="更换头像"
@@ -15,7 +15,7 @@
 
     <TextView
         android:id="@+id/change_tx"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/x400"
         android:layout_height="wrap_content"
         android:padding="15dp"
         android:text="从相册选择"
@@ -23,7 +23,7 @@
 
     <TextView
         android:id="@+id/look_big"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/x400"
         android:layout_height="wrap_content"
         android:padding="15dp"
         android:text="拍照上传"
@@ -31,9 +31,9 @@
 
     <TextView
         android:id="@+id/qux"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/x400"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
+
         android:gravity="right"
         android:padding="15dp"
         android:text="取消"
