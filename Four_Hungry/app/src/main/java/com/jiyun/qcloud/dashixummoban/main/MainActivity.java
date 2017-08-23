@@ -1,8 +1,7 @@
 package com.jiyun.qcloud.dashixummoban.main;
 
-import android.app.FragmentManager;
 import android.os.Build;
-import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -20,8 +19,6 @@ import com.jiyun.qcloud.dashixummoban.ui.first.HomePresenter;
 import com.jiyun.qcloud.dashixummoban.ui.more.MorePageFragment;
 import com.jiyun.qcloud.dashixummoban.ui.mycenter.MyPageFragment;
 import com.jiyun.qcloud.dashixummoban.ui.order.OrderPageFragment;
-
-import java.util.logging.Logger;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -63,7 +60,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        Logger.d("===========");
+       // Logger.d("===========");
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             //透明状态栏
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
