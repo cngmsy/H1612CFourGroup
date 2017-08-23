@@ -75,7 +75,7 @@ public class FirstPageFragment extends BaseFragment implements HomeContract.View
     private HomeAdapter adapter;
 
 
-    
+
     private HomeContract.Presenter presenter;
     private List<HomeBean.BodyBean.SellerBean> list2 = new ArrayList<>();
     private List<String> list3 = new ArrayList<>();
