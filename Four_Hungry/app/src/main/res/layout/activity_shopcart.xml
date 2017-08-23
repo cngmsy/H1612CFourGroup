@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y100"
+        android:background="@color/blue2"
+        android:orientation="horizontal">
+        <!-- 尖括号的布局 -->
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:src="@mipmap/ic_diary_back" />
+        <!-- 购物车的布局 -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="购物车"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
+        <!-- 编辑的布局 -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3.18"
+            android:gravity="center"
+            android:text="编辑"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+        <ListView
+            android:id="@+id/cart_shopping_listview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:divider="@color/gray3"
+            android:layout_weight="1"
+            android:dividerHeight="0.5dp">
+        </ListView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x80"
+        android:background="@color/gray3"
+        android:orientation="horizontal">
+        <!-- 合计的布局 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/totalize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/red"
+                android:text="合计:￥0"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="不含配送费"
+                android:textSize="10sp"
+                android:paddingLeft="20dp"
+                android:textColor="@color/black"
+                />
+        </LinearLayout>
+
+        <!-- 去结算的布局 -->
+        <Button
+            android:id="@+id/jiesuan_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x450"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="去结算"/>
+    </LinearLayout>
+</LinearLayout >

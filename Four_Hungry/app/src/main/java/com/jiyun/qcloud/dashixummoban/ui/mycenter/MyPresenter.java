@@ -5,6 +5,8 @@ import com.jiyun.qcloud.dashixummoban.modle.dataModel.IPandaHomeModel;
 import com.jiyun.qcloud.dashixummoban.modle.dataModel.PandaHomeModelImpl;
 import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
 
+import java.io.File;
+
 /**
  * Created by my301s on 2017/8/22.
  */
@@ -19,9 +21,15 @@ public class MyPresenter implements MyContract.Presenter {
         this.homeModel = new PandaHomeModelImpl();
     }
 
+
     @Override
     public void start() {
-        homeModel.updataHead(new NetWorkCallBack<Head>() {
+
+    }
+
+    @Override
+    public void upImage(File file) {
+        homeModel.updataHead(file, new NetWorkCallBack<Head>() {
             @Override
             public void onSuccess(Head head) {
                 view.showImageHead(head);
@@ -29,7 +37,7 @@ public class MyPresenter implements MyContract.Presenter {
 
             @Override
             public void onError(int errorCode, String errorMsg) {
-                view.showMessage(errorMsg);
+
             }
 
             @Override

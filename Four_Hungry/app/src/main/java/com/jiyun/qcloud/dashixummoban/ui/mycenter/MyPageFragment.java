@@ -1,7 +1,9 @@
 package com.jiyun.qcloud.dashixummoban.ui.mycenter;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,14 +18,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
+import com.google.gson.Gson;
 import com.jiyun.qcloud.dashixummoban.R;
 import com.jiyun.qcloud.dashixummoban.base.BaseFragment;
 import com.jiyun.qcloud.dashixummoban.entity.DataSynEvent;
 import com.jiyun.qcloud.dashixummoban.entity.Head;
 import com.jiyun.qcloud.dashixummoban.entity.HeadEventBean;
+import com.jiyun.qcloud.dashixummoban.entity.HeadResult;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -33,7 +38,6 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.HashMap;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -71,6 +75,10 @@ public class MyPageFragment extends BaseFragment implements MyContract.View{
     private static final int PHOTO_REQUEST_CUT = 3;
      MyContract.Presenter presenter;
     private String homeData;
+    private PopupWindow popupWindow;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
+    private String substring;
 
     @Override
     protected int getLayoutRes() {
@@ -79,9 +87,22 @@ public class MyPageFragment extends BaseFragment implements MyContract.View{
 
     @Override
     protected void initData() {
+        presenter=new MyPresenter(this);
+
         if (presenter != null) {
             presenter.start();
         }
+
+        SharedPreferences sharedP = getActivity().getSharedPreferences("zc", Context.MODE_PRIVATE);
+        String picture = sharedP.getString("picture", "");
+        Glide.with(getActivity().getApplicationContext()).load(picture).asBitmap().centerCrop().into(new BitmapImageViewTarget(imageHead) {
+            @Override
+            protected void setResource(Bitmap resource) {
+                RoundedBitmapDrawable ciDrawable = RoundedBitmapDrawableFactory.create(getActivity().getApplicationContext().getResources(), resource);
+                ciDrawable.setCircular(true);
+                imageHead.setImageDrawable(ciDrawable);
+            }
+        });
     }
 
     @Override
@@ -143,6 +164,8 @@ public class MyPageFragment extends BaseFragment implements MyContract.View{
             if (data != null) {
                 // 得到图片的全路径
                 Uri uri = data.getData();
+                String s = uri.toString();
+                substring = s.substring(s.length() - 2, s.length());
                 Log.e("相册上传", uri + "");
                 crop(uri);
                 Glide.with(getActivity().getApplicationContext()).load(uri).asBitmap().centerCrop().into(new BitmapImageViewTarget(imageHead) {
@@ -169,74 +192,8 @@ public class MyPageFragment extends BaseFragment implements MyContract.View{
                     }
                 });
 
-                HashMap<String, String> map = new HashMap<>();
                 final File file = saveBitmapFile(bitmap);
-                map.put("file", file + "");
-
-               /* Gson gson = new Gson();
-                final HeadResult headResult = gson.fromJson(homeData, HeadResult.class);
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(getActivity(), headResult.getResult(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-*/
-                /*//头像上传操作
-                HashMap<String, String> map = new HashMap<>();
-                final File file = saveBitmapFile(bitmap);
-                map.put("file", file + "");
-                OkHttpClient.Builder builder = new OkHttpClient.Builder()
-                        .connectTimeout(15, TimeUnit.SECONDS)
-                        .writeTimeout(20, TimeUnit.SECONDS)
-                        .readTimeout(20, TimeUnit.SECONDS);
-
-
-                OkHttpClient mOkHttpClient = builder.build();
-
-                MultipartBody.Builder mbody = new MultipartBody.Builder().setType(MultipartBody.FORM);
-                mbody.addFormDataPart("image", file.getName(), RequestBody.create(null, file));
-                RequestBody requestBody = mbody.build();
-                Request request = new Request.Builder()
-                        .url("http://123.206.14.104:8080/FileUploadDemo/FileUploadServlet")
-                        .post(requestBody)
-                        .build();
-                mOkHttpClient.newCall(request).enqueue(new Callback() {
-                    @Override
-                    public void onFailure(Call call, IOException e) {
-
-                    }
-
-                    @Override
-                    public void onResponse(Call call, Response response) throws IOException {
-                        String string = response.body().string();
-                        Gson gson = new Gson();
-                        Head shangchuang = gson.fromJson(string, Head.class);
-                        final HeadResult shangchuang2 = gson.fromJson(shangchuang.getData(), HeadResult.class);
-
-                        getActivity().runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(getActivity(), shangchuang2.getResult(), Toast.LENGTH_SHORT).show();
-                                String localurl = shangchuang2.getUrl().replace("localhost", "123.206.14.104");
-                                Log.e("localurl", localurl);
-
-                                sharedPreferences = getActivity().getSharedPreferences("zc", Context.MODE_PRIVATE);
-                                editor = sharedPreferences.edit();
-                                editor.putString("picture", localurl);
-                                editor.commit();
-                                Glide.with(getActivity().getApplicationContext()).load(localurl).asBitmap().centerCrop().into(new BitmapImageViewTarget(imageHead) {
-                                    @Override
-                                    protected void setResource(Bitmap resource) {
-                                        RoundedBitmapDrawable ciDrawable = RoundedBitmapDrawableFactory.create(getActivity().getApplicationContext().getResources(), resource);
-                                        ciDrawable.setCircular(true);
-                                        imageHead.setImageDrawable(ciDrawable);
-                                    }
-                                });
-                            }
-                        });
-                    }
-                });*/
+                presenter.upImage(file);
             }
 
         } else if (requestCode == PHOTO_REQUEST_CAREMA) {
@@ -276,7 +233,7 @@ public class MyPageFragment extends BaseFragment implements MyContract.View{
     }
 
     private void mypop() {
-        final PopupWindow popupWindow = new PopupWindow();
+        popupWindow = new PopupWindow();
         View view = LayoutInflater.from(getContext()).inflate(R.layout.mypop, null);
         change_tx = (TextView) view.findViewById(R.id.change_tx);
         look_big = (TextView) view.findViewById(R.id.look_big);
@@ -333,7 +290,7 @@ public class MyPageFragment extends BaseFragment implements MyContract.View{
     }
 
     public File saveBitmapFile(Bitmap bitmap) {
-        File file = new File("/sdcard/head.jpg");//将要保存图片的路径
+        File file = new File("/sdcard/"+substring+"head.jpg");//将要保存图片的路径
         try {
             BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(file));
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bos);
@@ -366,7 +323,35 @@ public class MyPageFragment extends BaseFragment implements MyContract.View{
     }
 
     @Override
-    public void showImageHead(Head head) {
-        homeData = head.getData();
+    public void showImageHead(final Head head) {
+        if (head.getCode().equals("0")){
+                Gson gson = new Gson();
+                final HeadResult headResult = gson.fromJson(head.getData(), HeadResult.class);
+                getActivity().runOnUiThread(new Runnable() {
+
+                    private String url;
+
+                    @Override
+                    public void run() {
+                        Toast.makeText(getContext(), headResult.getResult(), Toast.LENGTH_SHORT).show();
+                        url = headResult.getUrl();
+                        String localurl = url.replace("localhost", "123.206.14.104");
+
+                        sharedPreferences = getActivity().getSharedPreferences("zc", Context.MODE_PRIVATE);
+                        editor = sharedPreferences.edit();
+                        editor.putString("picture", localurl);
+                        editor.commit();
+                        Glide.with(getActivity().getApplicationContext()).load(localurl).asBitmap().centerCrop().into(new BitmapImageViewTarget(imageHead) {
+                            @Override
+                            protected void setResource(Bitmap resource) {
+                                RoundedBitmapDrawable ciDrawable = RoundedBitmapDrawableFactory.create(getActivity().getApplicationContext().getResources(), resource);
+                                ciDrawable.setCircular(true);
+                                imageHead.setImageDrawable(ciDrawable);
+                            }
+                        });
+                    }
+
+                });
+        }
     }
 }

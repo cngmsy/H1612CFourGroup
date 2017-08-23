@@ -8,18 +8,23 @@ package com.jiyun.qcloud.dashixummoban.config;
 public class Urls {
 
     //服务器地址
-    private static final String BASEURL = "http://www.ipanda.com/kehuduan/";
+    public static final String BASE_URL = "http://123.206.14.104:8080/TakeoutService/";
+    //首页GET
+    public static final String HOME = BASE_URL + "home";
+    //商铺页GET
+//    http://123.206.14.104:8080/TakeoutService/goods?sellerId=101
+    public static final String SHOP = BASE_URL + "goods";
+    //用户登陆GET
+    public static final String LOGIN = BASE_URL + "login";
+    //订单管理
+    public static final String ORDERFORM_MANAGER = BASE_URL + "order";
+    //订单列表GET
+    public static final String ORDERFORM_LIST = BASE_URL + "order";
+    //支付GET
+    public static final String PAY = BASE_URL + "pay";
+    //上传头像
+    public static final String USERIMG = "http://123.206.14.104:8080/FileUploadDemo/FileUploadServlet";
+    //预告片
+    public static final String PREVUE="https://ticket-api-m.mtime.cn/discovery/trailerList.api";
 
-    //首页
-    public static final String PANDAHOME = BASEURL+"PAGE14501749764071042/index.json";
-    //熊猫直播
-    public static final String PANDALIVE = BASEURL+"PAGE14501769230331752/index.json";
-    //列表
-    public static final String PAGELIST = BASEURL+"PAGE14501786751053212/index.json";
-
-    public static final String PAGEINFOLIST = "http://101.200.142.201/MyListLoadAuto/listload";
-    //获取图片验证码
-    public static final String IMGCODE = "http://reg.cntv.cn/simple/verificationCode.action";
-    //邮箱注册
-    public static final String EMAILREGISTER = "https://reg.cntv.cn/api/register.action";
 }

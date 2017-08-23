@@ -7,6 +7,7 @@ import com.jiyun.qcloud.dashixummoban.entity.PandaHome;
 /**
  * Created by chj on 2017/8/21.
  * 这是难点
+ * 约定一个使用接口的方法
  */
 
 public class HomeContract {

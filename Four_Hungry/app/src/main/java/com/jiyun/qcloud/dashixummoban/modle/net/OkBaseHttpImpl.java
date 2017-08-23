@@ -208,8 +208,9 @@ public class OkBaseHttpImpl implements IBaseHttp {
     @Override
     public void upload(String url, Map<String,String> map, File file, final NetWorkCallBack callBacks) {
         // MediaType MEDIA_TYPE_PNG = MediaType.parse("image/png");
+//        MediaType.parse("application/octet-stream"),
 
-        RequestBody fileBody = RequestBody.create(MediaType.parse("application/octet-stream"), file);
+        RequestBody fileBody = RequestBody.create(MediaType.parse("image/png"), file);
         RequestBody requestBody=new MultipartBody.Builder().setType(MultipartBody.FORM).addFormDataPart("file",file.getName(),fileBody).build();
         Request request=new Request.Builder().url(url).post(requestBody).build();
 
@@ -233,7 +234,7 @@ public class OkBaseHttpImpl implements IBaseHttp {
                 App.mBaseActivity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        callBacks.onSuccess(result);
+                        callBacks.onSuccess(getGeneric(result,callBacks));
                     }
                 });
             }
