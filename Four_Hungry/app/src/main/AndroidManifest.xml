@@ -3,7 +3,6 @@
     package="com.jiyun.qcloud.dashixummoban">
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <!--需要配置的内容权限，这个activity   com.mob.tools.MobUIShell
   AppKey和AppSecret
   -->

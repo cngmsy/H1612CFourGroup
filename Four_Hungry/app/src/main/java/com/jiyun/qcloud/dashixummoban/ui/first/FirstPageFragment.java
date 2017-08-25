@@ -43,6 +43,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.Unbinder;
+import util.UpdateAppUtils;
 
 /**
  * Created by chj on 2017/8/20.
@@ -94,6 +95,12 @@ public class FirstPageFragment extends BaseFragment implements HomeContract.View
         if (presenter != null) {
             presenter.start();
         }
+        //版本更新
+        UpdateAppUtils.from(getActivity())//Activity名
+                .serverVersionCode(2)  //服务器versionCode
+                .serverVersionName("2.0") //服务器versionName
+                .apkPath("http://123.206.14.104:8080/FileUploadDemo/files/wxl.apk") //最新apk下载地址
+                .update();
     }
 
     @Override

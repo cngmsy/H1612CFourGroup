@@ -40,7 +40,9 @@ dependencies {
     //上拉刷新，下拉加载的框架
 
     //轮播图
+
     //Retrofit2
+
     //Dagger2 的依赖
     compile name: 'SMSSDK-3.0.0', ext: 'aar'
     compile 'com.github.bumptech.glide:glide:3.7.0'
@@ -57,19 +59,15 @@ dependencies {
     compile 'com.squareup.okhttp3:logging-interceptor:3.3.0'
     compile 'com.google.dagger:dagger:2.5'
     compile 'com.github.orhanobut:logger:1.12'
-    compile 'com.android.support:support-v4:26.+'
-
     compile 'fm.jiecao:jiecaovideoplayer:2.0'
-
     testCompile 'junit:junit:4.12'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
-
     compile 'com.androidkun:pulltorefreshrecyclerview:1.0.6'
     compile 'com.jude:rollviewpager:1.4.6'
     compile files('libs/AMap_Location_V3.4.0_20170427.jar')
     compile files('libs/AMap_Search_V5.1.0_20170517.jar')
     compile files('libs/Android_Map3D_SDK_V5.1.0_20170518.jar')
-
+    compile 'com.teprinciple:updateapputils:1.1'
     compile 'org.greenrobot:eventbus:3.0.0'
     compile files('libs/MobCommons-2017.0607.1736.jar')
     compile files('libs/MobTools-2017.0607.1736.jar')
@@ -82,5 +80,6 @@ dependencies {
     compile files('libs/umeng_social_shareboard.jar')
     compile files('libs/umeng_social_shareview.jar')
     compile files('libs/umeng_social_tool.jar')
-
+    compile 'com.android.support:support-v4:26.0.0-alpha1'
+    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
 }
