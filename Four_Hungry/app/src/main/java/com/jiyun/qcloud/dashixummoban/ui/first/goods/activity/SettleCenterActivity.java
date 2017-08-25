@@ -24,7 +24,8 @@ import butterknife.OnClick;
  * Created by liuwangping on 2017/8/15.
  */
 
-public class SettleCenterActivity extends BaseActivity {
+
+public class SettleCenterActivity extends BaseActivity{
     @BindView(R.id.sette_back)
     ImageButton setteBack;
     @BindView(R.id.settle_left)
