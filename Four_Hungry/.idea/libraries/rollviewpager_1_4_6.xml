@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="rollviewpager-1.4.6">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/c10239aacfe1f31c862fd20ef14dd9071ad72e05/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/c10239aacfe1f31c862fd20ef14dd9071ad72e05/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jude/rollviewpager/1.4.6/fd32c416214bfc0fcbe2c069194d2adadcd6cb97/rollviewpager-1.4.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

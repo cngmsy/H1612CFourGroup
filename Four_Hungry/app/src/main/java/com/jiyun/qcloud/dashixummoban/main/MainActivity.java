@@ -1,7 +1,7 @@
 package com.jiyun.qcloud.dashixummoban.main;
 
+
 import android.os.Build;
-import android.support.v4.app.FragmentManager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -31,7 +31,6 @@ import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity {
 
-
     @BindView(R.id.container)
     FrameLayout container;
     @BindView(R.id.main_ZongHe)
@@ -44,7 +43,7 @@ public class MainActivity extends BaseActivity {
     RadioButton mainWoDe;
     @BindView(R.id.Main_RadioGroup)
     RadioGroup MainRadioGroup;
-    private FragmentManager fragmentManager;
+    private android.support.v4.app.FragmentManager fragmentManager;
     private long mExitTime;
 
     @Override
@@ -62,7 +61,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-       // Logger.d("===========");
+
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             //透明状态栏
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -71,6 +70,30 @@ public class MainActivity extends BaseActivity {
         }
         return R.layout.activity_main;
     }
+
+    @OnClick({R.id.main_ZongHe, R.id.main_DongTan, R.id.main_FaXian, R.id.main_WoDe, R.id.Main_RadioGroup})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.main_ZongHe:
+                FragmentMager.getInstance().start(R.id.container, FirstPageFragment.class,false).build();
+                break;
+            case R.id.main_DongTan:
+                OrderPageFragment orderPageFragment = (OrderPageFragment) FragmentMager.getInstance().start(R.id.container, OrderPageFragment.class, false).build();
+                new OrdePresenter(orderPageFragment);
+                break;
+            case R.id.main_FaXian:
+                FragmentMager.getInstance().start(R.id.container, MyPageFragment.class,false).build();
+                break;
+            case R.id.main_WoDe:
+                MorePageFragment morePageFragment = (MorePageFragment) FragmentMager.getInstance().start(R.id.container, MorePageFragment.class, false).build();
+                new MoviePresenter(morePageFragment);
+                break;
+            case R.id.Main_RadioGroup:
+                break;
+        }
+    }
+
+
 
     private long firstTime = 0;
     @Override
@@ -88,29 +111,6 @@ public class MainActivity extends BaseActivity {
                 break;
         }
         return super.onKeyUp(keyCode, event);
-    }
-
-
-    @OnClick({R.id.main_ZongHe, R.id.main_DongTan, R.id.main_FaXian, R.id.main_WoDe, R.id.Main_RadioGroup})
-    public void onViewClicked(View view) {
-        switch (view.getId()) {
-            case R.id.main_ZongHe:
-                FragmentMager.getInstance().start(R.id.container, FirstPageFragment.class,false).build();
-                break;
-            case R.id.main_DongTan:
-                OrderPageFragment orderPageFragment = (OrderPageFragment) FragmentMager.getInstance().start(R.id.container, OrderPageFragment.class, false).build();
-                new OrdePresenter(orderPageFragment);
-                break;
-            case R.id.main_FaXian:
-               FragmentMager.getInstance().start(R.id.container, MyPageFragment.class,false).build();
-                break;
-            case R.id.main_WoDe:
-                MorePageFragment morePageFragment = (MorePageFragment) FragmentMager.getInstance().start(R.id.container, MorePageFragment.class, false).build();
-                new MoviePresenter(morePageFragment);
-                break;
-            case R.id.Main_RadioGroup:
-                break;
-        }
     }
 
 }

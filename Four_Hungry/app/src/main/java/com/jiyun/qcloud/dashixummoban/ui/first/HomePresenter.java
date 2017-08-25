@@ -1,9 +1,8 @@
 package com.jiyun.qcloud.dashixummoban.ui.first;
 
 
-import com.jiyun.qcloud.dashixummoban.entity.PandaHome;
-import com.jiyun.qcloud.dashixummoban.modle.dataModel.IPandaHomeModel;
-import com.jiyun.qcloud.dashixummoban.modle.dataModel.PandaHomeModelImpl;
+import com.jiyun.qcloud.dashixummoban.entity.Home;
+import com.jiyun.qcloud.dashixummoban.modle.dataModel.HomeImpl;
 import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
 
 import java.io.File;
@@ -13,10 +12,9 @@ import java.io.File;
  */
 
 public class HomePresenter implements HomeContract.Presenter {
-    //在p层持有View层的对象，但是这里的对象不是实例化的对象，而是使用了接口来实现调用
+
     private HomeContract.View homeView;
-    //在P层持有了Model层的对象
-    private IPandaHomeModel homeModel;
+    private HomeImpl homeModel;
     /*
        在构造方法里面做了什么事情;   初始化了HomeView  这时候的homeView相当于HomePageFragent
        同时在这个构造方法中有初始化了homeModel   HomeModel里面就是网络请求后从服务器返回的bean结果
@@ -24,17 +22,17 @@ public class HomePresenter implements HomeContract.Presenter {
     public HomePresenter(HomeContract.View homeView){
         this.homeView = homeView;
         homeView.setPresenter(this);
-        this.homeModel = new PandaHomeModelImpl();
+        this.homeModel = new HomeImpl();
     }
 
     @Override
     public void start() {
         homeView.showProgress();
-        //在该方法的回调参数中完成数据bean对象的返回
-        homeModel.loadHomeList(new NetWorkCallBack<PandaHome>() {
+        homeView.listener();
+        homeModel.getHome(116.30142, 40.05087, new NetWorkCallBack<Home>() {
             @Override
-            public void onSuccess(PandaHome pandaHome) {
-                homeView.showHomeListData(pandaHome);
+            public void onSuccess(Home home) {
+                homeView.showHomeListData(home);
                 homeView.dimissProgress();
             }
 
@@ -49,6 +47,8 @@ public class HomePresenter implements HomeContract.Presenter {
 
             }
         });
+
+
     }
 
     @Override
